@@ -4,7 +4,7 @@ import random
 from pathlib import Path
 
 
-def generate_millikan_results(num_runs=100):
+def generate_millikan_results(num_runs=100, variance=True):
     density_of_drop = 900  # kg/m^3
     plate_separation_m = 0.003  # 3 mm (3 / 1000)
     g = 9.8
@@ -27,6 +27,10 @@ def generate_millikan_results(num_runs=100):
 
         # Apply the same scaling from the JS code (Radius * 1e6 * 100)
         final_radius = radius_m * 1e6 * 100
+
+        # Add variance to fake that this data was manually collected
+        if variance:
+            final_radius += random.choice([-0.2, -0.1, 0.0, 0.1, 0.2])
 
         simulation_data.append({
             "Run": run,
@@ -55,6 +59,7 @@ def get_unique_filepath(folder: str, base_name: str, extension: str) -> Path:
         if not filepath.exists():
             return filepath
         counter += 1
+
 
 # Create a filename
 SCRIPT_DIR = Path(__file__).resolve().parent
