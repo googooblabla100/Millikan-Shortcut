@@ -30,7 +30,7 @@ def generate_millikan_results(num_runs=100, variance=True):
 
         # Add variance to fake that this data was manually collected
         if variance:
-            final_radius += random.uniform(-0.1, 0.2)
+            final_radius += random.uniform(-0.2, 0.2)
 
         simulation_data.append({
             "Run": run,
