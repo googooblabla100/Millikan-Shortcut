@@ -1,0 +1,1 @@
+This is a shortcut to getting a large number of millikan lab results fast. The equasions are modeled after the ones used on [this](https://www.thephysicsaviary.com/Physics/Programs/Labs/MillikanOilDropLab/index.html) website. Results appear in the /results/ folder.
